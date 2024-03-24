@@ -32,7 +32,7 @@ function df2dot(df) ## convention over configuration: node1, node2; node1_label=
 end
 
 function plot_dot(x::String, filename)
-    dotfilename=tempname()*".dot"
+    dotfilename = tempname()*".dot"
     write(dotfilename, x)
     run(`dot -Tpng -o$filename $dotfilename`)
     @info "Wrote $filename from $dotfilename"
