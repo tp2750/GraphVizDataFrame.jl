@@ -57,3 +57,5 @@ Examples:
 | Sienna    | "#a0522d" | "0.051 0.718 0.627" | "sienna"    |
 
 It will always be the last specified color that applies, node2_fillcolor is applied after node1_fillcolor
+
+The x11 colors are listed here: <https://en.wikipedia.org/wiki/X11_color_names>
