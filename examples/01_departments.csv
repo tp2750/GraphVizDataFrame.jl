@@ -1,6 +1,6 @@
 node1,node2,node1_label,node2_label,node1_fillcolor,node2_fillcolor,edge_label,edge_type
-Thomas,Lars,,,,,,
-Michael,Lars,,,,,,
-Morten,Peter,,,,,,
-Lars,Sune,,,,,,
-Peter,Sune,,,,,,
+Thomas,Lars,,,red,green,"L1",solid
+Michael,Lars,,,white,turquoise,"L2",dotted
+Morten,Peter,,,"#40e0d0",,"L3",bold
+Lars,Sune,,,blue,red,"4",tapered
+Peter,Sune,"Boy","Boss",,yellow,5,

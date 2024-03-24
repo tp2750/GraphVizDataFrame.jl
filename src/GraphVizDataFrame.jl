@@ -15,10 +15,12 @@ function df2dot(df) ## convention over configuration: node1, node2; node1_label=
     for row in eachrow(df2)
         n1 = escapequote(row.node1)
         n2 = escapequote(row.node2)
+        l1 = ismissing(row.node1_label) ? n1 : join([n1, escapequote(row.node1_label)], "\n")
+        l2 = ismissing(row.node2_label) ? n2 : join([n2, escapequote(row.node2_label)], "\n")
         col1 = colorstring(row.node1_fillcolor)
         col2 = colorstring(row.node2_fillcolor)
-        nodes[n1] = """  "$n1" [label="$(n1)" $(col1)] """
-        nodes[n2] = """  "$n2" [label="$(n2)" $(col2)] """
+        nodes[n1] = """  "$n1" [label="$(l1)" $(col1)] """
+        nodes[n2] = """  "$n2" [label="$(l2)" $(col2)] """
         edge_type = edge_style_string(row.edge_type)
         edge_name = edge_name_string(row.edge_label)
         label = """ [label="$(edge_name)" $(edge_type) ] """
@@ -44,5 +46,6 @@ edge_name_string(x) =  ismissing(x) ? "" : escapequote(x)
 
 
 escapequote(x) = replace(x, "\"" => "'")
- 
+escapequote(::Missing) = ""
+
 end
